@@ -1,0 +1,202 @@
+
+<html>
+
+<script>
+
+	var moves = [ "","","","","","","","",""];
+
+
+	function store() {
+
+		var numMoves=0;
+		var move="X";
+		var won=0;
+
+		moves[0] = document.f1.s1.value;
+		moves[1] = document.f1.s2.value;
+		moves[2] =  document.f1.s3.value;
+		moves[3] =  document.f1.s4.value;
+		moves[4] =  document.f1.s5.value;
+		moves[5] =  document.f1.s6.value;
+		moves[6] =  document.f1.s7.value;
+		moves[7] = document.f1.s8.value;
+		moves[8] =  document.f1.s9.value;
+
+
+		for(var i=0; i<1; i++)
+		{
+			if(moves[0]==move && moves[4]==move && moves[8]==move)
+			{
+				alert(move + " won!");
+				i=2;
+				won=1;
+			}
+
+			if(moves[1]==move&& moves[4]==move && moves[7]==move)
+			{
+				alert(move + " won!");
+				i=2;
+				won=1;
+			}
+
+			if(moves[2]==move&& moves[4]==move && moves[6]==move)
+			{
+				alert(move + " won!");
+				i=2;
+				won=1;
+			}
+
+			if(moves[3]==move&& moves[4]==move && moves[5]==move)
+			{
+				alert(move + " won!");
+				i=2;
+				won=1;
+			}
+
+			if(moves[0]==move && moves[1]==move && moves[2]==move)
+			{
+				alert(move + " won!");
+				i=2;
+				won=1;
+			}
+
+			if(moves[6]==move&& moves[7]==move && moves[8]==move)
+			{
+				alert(move + " won!");
+				i=2;
+				won=1;
+			}
+
+			if(moves[0]==move&& moves[3]==move && moves[6]==move)
+			{
+				alert(move + " won!");
+				i=2;
+				won=1;
+			}
+
+			if(moves[2]==move&& moves[5]==move && moves[8]==move)
+			{
+				alert(move + " won!");
+				i=2;
+				won=1;
+			}
+
+		}
+
+		if(won==0)
+		{
+
+			for(var i = 0; i<9; i++)
+			{
+				if(moves[i]=="")
+				{
+					moves[i]="O";
+					document.f1.s1.value=moves[0] ;
+					document.f1.s2.value=moves[1] ;
+					document.f1.s3.value=moves[2]; 
+					document.f1.s4.value=moves[3] ;
+					document.f1.s5.value=moves[4] ;
+					document.f1.s6.value=moves[5] ;
+					document.f1.s7.value=moves[6] ;
+					document.f1.s8.value=moves[7] ;
+					document.f1.s9.value=moves[8] ;
+					i=10;
+				}
+				numMoves+=1;
+			}
+
+			if(numMoves<9)
+			{
+
+				move="O";
+
+				for(var i=0; i<1; i++)
+				{
+					if(moves[0]==move && moves[4]==move && moves[8]==move)
+					{
+						alert(move + " won!");
+						i=2;
+					}
+
+					if(moves[1]==move&& moves[4]==move && moves[7]==move)
+					{
+						alert(move + " won!");
+						i=2;
+					}
+
+					if(moves[2]==move&& moves[4]==move && moves[6]==move)
+					{
+						alert(move + " won!");
+						i=2;
+					}
+
+					if(moves[3]==move&& moves[4]==move && moves[5]==move)
+					{
+						alert(move + " won!");
+						i=2;
+					}
+
+					if(moves[0]==move && moves[1]==move && moves[2]==move)
+					{
+						alert(move + " won!");
+						i=2;
+					}
+
+					if(moves[6]==move&& moves[7]==move && moves[8]==move)
+					{
+						alert(move + " won!");
+						i=2;
+					}
+
+					if(moves[0]==move&& moves[3]==move && moves[6]==move)
+					{
+						alert(move + " won!");
+						i=2;
+					}
+
+					if(moves[2]==move&& moves[5]==move && moves[8]==move)
+					{
+						alert(move + " won!");
+						i=2;
+					}
+
+				}
+
+				if(numMoves==9)
+				{
+					alert("You tied with the computer");
+
+				}
+
+			}
+		}
+	}
+
+	function clearEverything()
+	{
+		document.f1.s1.value="";
+		document.f1.s2.value="";
+		document.f1.s3.value="";
+		document.f1.s4.value="";
+		document.f1.s5.value="";
+		document.f1.s6.value="";
+		document.f1.s7.value="";
+		document.f1.s8.value="";
+		document.f1.s9.value="";
+	}
+
+</script>
+
+<body>
+	<form name=f1>
+
+		<input type=text name=s1 size=1><input type=text name=s2 size=1><input type=text name=s3 size=1><br>
+		<input type=text name=s4 size=1><input type=text name=s5 size=1><input type=text name=s6 size=1><br>
+		<input type=text name=s7 size=1><input type=text name=s8 size=1><input type=text name=s9 size=1>
+		<br><input type=button value="Store Move" onClick="store();">
+		<br><input type=button value="Clear" onClick="clearEverything();">
+		<p 	id="yo"></p>
+
+	</form>
+</body>
+</html>
